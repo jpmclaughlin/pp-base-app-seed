@@ -356,6 +356,34 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>'
         }]
       },
+      push: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.dist %>',
+          dest: '//slt-app-01/programs/_JPM-testing/angular-seed',
+          src: [
+            '*.{ico,png,txt}',
+            '.htaccess',
+            '*.html',
+            'views/{,*/}*.html',
+            'scripts/{,*/}*.js',
+            'styles/{,*/}*.css',
+            'images/{,*/}*.{webp}',
+            'fonts/*'
+          ]
+        }, {
+          expand: true,
+          cwd: '.tmp/images',
+          dest: '<%= yeoman.dist %>/images',
+          src: ['generated/*']
+        }, {
+          expand: true,
+          cwd: 'bower_components/bootstrap/dist',
+          src: 'fonts/*',
+          dest: '<%= yeoman.dist %>'
+        }]
+      },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
@@ -432,6 +460,11 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin'
+  ]);
+
+  grunt.registerTask('push', [
+    'build',
+    'copy:push'
   ]);
 
   grunt.registerTask('default', [
