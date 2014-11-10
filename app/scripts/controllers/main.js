@@ -7,11 +7,11 @@
  * # MainCtrl
  * Controller of the ppBaseAppSeedApp
  */
-angular.module('ppBaseAppSeedApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+// angular.module('ppBaseAppSeedApp')
+//   .controller('MainCtrl', function ($scope) {
+//     $scope.awesomeThings = [
+//       'HTML5 Boilerplate',
+//       'AngularJS',
+//       'Karma'
+//     ];
+//   });
