@@ -8,14 +8,9 @@ This version of the Angular JS application was forked from the angular-seed.  It
 
 ## Prerequisites
 
-### Git
-
-* A good place to learn about setting up git is [here][git-github]
-* Git [home][git-home] (download, documentation)
-
-### Node.js and Tools
-
-* Get [Node.js][node-download].
+* [Git][git]
+* [Node.js][node]
+* [NPM.js][npm]
 * Install the tool dependencies (`npm install`)
 
 
