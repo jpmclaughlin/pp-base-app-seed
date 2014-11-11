@@ -26,13 +26,12 @@ The following describes how you can develop, test, and deploy this application.
 
 ### Installing dependencies
 
-We have two kinds of dependencies in this project: tools and angular framework code.  The tools help
-us manage and test the application.
+There are two kinds of dependencies in this project: tools and angular framework code.  The tools help manage and test the application.
 
-* We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We get the angular code via `bower`, a [client-side code package manager][bower].
+* Get the tools we depend upon via `npm`, the [node package manager][npm].
+* Get the angular code via `bower`, a [client-side code package manager][bower].
 
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
+To install, simply call:
 
 ```
 npm install
@@ -46,19 +45,18 @@ folders in your project.
 
 ### Run the Application
 
-We have preconfigured the project with a simple development web server.  The simplest way to start
-this server is:
+The project is preconfigured with a simple development web server.  The simplest way to start this server is:
 
 ```
 grunt serve
 ```
 
-Now browse to the app at `http://localhost:8000/app/index.html`.
+It should automatically launch the application in your default browser.  Otherwise, view it at `http://localhost:9000/`.
 
 
 ## Deploying/Pushing the Application Files
 
-I've added a Grunt command to push the application files to the test location on the network.  To deploy, simply call:
+I've added a Grunt command to optimize and push the application files to the [network test location][//slt-app-01/programs/_jpm-testing/base-settings-app-test/index.html].  To deploy, simply call:
 ```
 grunt push
 ```
@@ -86,10 +84,6 @@ bower update
 
 This will find the latest versions that match the version ranges specified in the `bower.json` file.
 
-
-## Contact
-
-For more information on AngularJS please check out http://angularjs.org/
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io
