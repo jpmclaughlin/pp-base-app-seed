@@ -142,12 +142,14 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      push: {
-        files: [{
-          dot: true,
-          src: [ '//slt-app-01/programs/_JPM-testing/base-settings-app-test/{,*/}*' ]
-        }]
-      },
+      // cleaning the network location doesn't work yet
+      // push: {
+      //   files: [{
+      //     expand: true,
+      //     dot: true,
+      //     src: [ '//slt-app-01/programs/_JPM-testing/base-settings-app-test/*.*' ]
+      //   }]
+      // },
       server: '.tmp'
     },
 
@@ -472,7 +474,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('push', [
     'build',
-    'clean:push',
+    // 'clean:push', // cleaning network location doesn't work just yet
     'copy:push'
   ]);
 
