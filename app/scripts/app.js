@@ -717,7 +717,7 @@ basesApp.controller('BaseListCtrl', ['$scope', 'filterFilter', function($scope, 
             ]
           }
         ]}
-  ]
+  ];
 
   $scope.setSize = function(size) {
 
@@ -732,7 +732,7 @@ basesApp.controller('BaseListCtrl', ['$scope', 'filterFilter', function($scope, 
       if ($scope.selectedSize[i].size === size) {
         $scope.gauges = angular.copy($scope.selectedSize[i].gauges);
       }
-    };
+    }
   };
 
   // $scope.setSize($scope.sizesModel.size);
@@ -750,7 +750,7 @@ basesApp.controller('BaseListCtrl', ['$scope', 'filterFilter', function($scope, 
         $scope.sizingBases = angular.copy($scope.selectedGauge[i].sizingBases);
         $scope.reshapingBases = angular.copy($scope.selectedGauge[i].reshapingBases);
       }
-    };
+    }
   };
 
 }]);
