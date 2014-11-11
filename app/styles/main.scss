@@ -68,6 +68,15 @@ pre {
   border-color: #398439;
 }
 
+hr {
+  margin: 2.5rem 0;
+  border-color: #dedede;
+}
+
+sizingBases>button, reshapingBases>button {
+  width: 100px;
+}
+
 .jumbotron {
   margin-top: 2.0rem;
   background-color: #dff0d8;
