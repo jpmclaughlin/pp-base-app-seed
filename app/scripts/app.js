@@ -31,7 +31,7 @@ basesApp.controller('BaseListCtrl', ['$scope', 'filterFilter', function($scope, 
           },
           {
             "name" : "SB",
-            "settings" : { "S1F": "56.5", "S1B": "35.5", "S2F": "27.2", "S2B": "15.2" }
+            "settings" : { "S1F": "7.5", "S1B": "3.3", "S2F": "4.2", "S2B": "5.2" }
           },
           {
             "name" : "SC",

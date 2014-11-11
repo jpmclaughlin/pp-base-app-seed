@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Change Over Base Settings | Mill 3</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -16,12 +16,17 @@
     <!-- endbuild -->
   </head>
   <body ng-app="basesApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <!--[if lte IE 8]>
+      <div class="alert alert-danger text-center">
+        <h1>WARNING:  <span class="small">This web application does not work in IE8.  Please <a href="http://browsehappy.com/">upgrade your browser</a> or contact IT if you need further assistance.</span>
+      </div>
     <![endif]-->
 
+    <div class="alert alert-danger text-center">
+      <h1>WARNING:  <span class="small">For demonstration purposes only.  The data below is not accurate.</span>
+    </div>
+
     <!-- Add your site or application content here -->
-    <div class="alert alert-danger text-center">WARNING:  For demonstration purposes only.  None of the data is accurate.</div>
 
     <div class="container" ng-controller="BaseListCtrl">
 
@@ -33,15 +38,15 @@
 
           <!-- <pre>sizesModel.size = {{sizesModel.size}}; gaugesModel.gauge = {{gaugesModel.gauge}}; sbModel.name = {{sbModel.name}}; rbModel.name = {{rbModel.name}}</pre> -->
 
-          <h1 class="title">Size</h1>
-          <div class="btn-group" data-toggle="buttons-radio">
+          <h2 class="title">Size</h2>
+          <div class="btn-group" data-toggle="buttons-radio" ng-cloak>
               <sizes ng-repeat="s in sizes">
                 <button type="button" class="btn btn-default" ng-click="setSize(s.size)" ng-model="sizesModel.size" btn-radio="s.size">{{s.size}}</button>
               </sizes>
           </div>
 
-          <h1 class="title">Gauge</h1>
-          <div class="btn-group" data-toggle="buttons-radio">
+          <h2 class="title">Gauge</h2>
+          <div class="btn-group" data-toggle="buttons-radio" ng-cloak>
               <gauges ng-repeat="ga in gauges">
                 <button type="button" class="btn btn-default" ng-click="setGauge(ga.gauge)" ng-model="gaugesModel.gauge" btn-radio="ga.gauge">{{ga.gauge}}</button>
               </gauges>
@@ -49,16 +54,16 @@
 
           <!-- <pre>selectedGauge = {{selectedGauge}}</pre> -->
 
-          <h1 class="title">Sizing Base</h1>
+          <h2 class="title">Sizing Base</h2>
           <!-- <pre>sizingBases = {{sizingBases}}</pre> -->
-          <div class="btn-group" data-toggle="buttons-radio">
+          <div class="btn-group" data-toggle="buttons-radio" ng-cloak>
               <sizingBases ng-repeat="sb in sizingBases">
                 <button type="button" class="btn btn-default" ng-model="sbModel.name" btn-radio="sb.name">{{sb.name}}</button>
               </sizingBases>
           </div>
-          <h1 class="title">Reshaping Base</h1>
+          <h2 class="title">Reshaping Base</h2>
           <!-- <pre>reshapingBases = {{reshapingBases}}</pre> -->
-          <div class="btn-group" data-toggle="buttons-radio">
+          <div class="btn-group" data-toggle="buttons-radio" ng-cloak>
               <reshapingBases ng-repeat="rb in reshapingBases">
                 <button type="button" class="btn btn-default" ng-model="rbModel.name" btn-radio="rb.name">{{rb.name}}</button>
               </reshapingBases>
@@ -68,7 +73,7 @@
 
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-8" ng-cloak>
           <div class="jumbotron" ng-show="sbModel.name && rbModel.name " ng-hide="!sbModel.name || !rbModel.name">
             <table class="table">
               <thead>
@@ -79,7 +84,7 @@
                 <tr><th>S2</th><td>{{sb.settings.S2F}}</td><td>{{sb.settings.S2B}}</td></tr>
               </tbody>
               <tbody ng-repeat="rb in reshapingBases | filter:rbModel.name">
-                <tr><th>RS1</th><td>{{rb.settings.RS1F}}</td><td>{{rb.settings.RS1F}}</td></tr>
+                <tr><th>RS1</th><td>{{rb.settings.RS1F}}</td><td>{{rb.settings.RS1B}}</td></tr>
                 <tr><th>RS2</th><td>{{rb.settings.RS2F}}</td><td>{{rb.settings.RS2B}}</td></tr>
               </tbody>
             </table>

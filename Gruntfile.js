@@ -361,7 +361,7 @@ module.exports = function (grunt) {
           expand: true,
           dot: true,
           cwd: '<%= yeoman.dist %>',
-          dest: '//slt-app-01/programs/_JPM-testing/angular-seed',
+          dest: '//slt-app-01/programs/_JPM-testing/base-settings-app-test',
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
