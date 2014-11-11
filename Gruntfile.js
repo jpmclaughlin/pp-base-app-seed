@@ -142,6 +142,12 @@ module.exports = function (grunt) {
           ]
         }]
       },
+      push: {
+        files: [{
+          dot: true,
+          src: [ '//slt-app-01/programs/_JPM-testing/base-settings-app-test/{,*/}*' ]
+        }]
+      },
       server: '.tmp'
     },
 
@@ -339,6 +345,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
+            '*.bat',
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
@@ -365,6 +372,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
+            '*.bat',
             '*.html',
             'views/{,*/}*.html',
             'scripts/{,*/}*.js',
@@ -464,6 +472,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('push', [
     'build',
+    'clean:push',
     'copy:push'
   ]);
 
