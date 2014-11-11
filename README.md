@@ -56,7 +56,7 @@ It should automatically launch the application in your default browser.  Otherwi
 
 ## Deploying/Pushing the Application Files
 
-I've added a Grunt command to optimize and push the application files to the [network test location][//slt-app-01/programs/_jpm-testing/base-settings-app-test/index.html].  To deploy, simply call:
+I've added a Grunt command to optimize and push the application files to the network test location at `//slt-app-01/programs/_jpm-testing/base-settings-app-test/index.html`.  To deploy, simply call:
 ```
 grunt push
 ```
