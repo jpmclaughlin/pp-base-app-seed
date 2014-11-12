@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Change Over Settings | Mill 3</title>
+    <title>Change Over Base Settings | Mill 3</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -23,15 +23,15 @@
       </div>
     <![endif]-->
 
-    <div class="alert alert-danger text-center">
+    <!-- <div class="alert alert-danger text-center">
       <h1>WARNING:  <span class="small">For demonstration purposes only.  The data below is not accurate.</span>
-    </div>
+    </div> -->
 
     <!-- Add your site or application content here -->
 
     <div class="container" ng-controller="BaseListCtrl">
 
-      <h1 class="heading text-center">Mill 3 Change Over Settings</h1>
+      <h1 class="heading text-center visible-lg">Mill 3 Change Over Base Settings</h1>
 
       <div class="row">
 
@@ -77,7 +77,9 @@
         </div>
 
         <div class="col-md-8" ng-cloak>
+          <h1 class="heading text-center hidden-lg">Mill 3 Change Over Base Settings</h1>
           <div class="jumbotron" ng-show="sbModel.name && rbModel.name " ng-hide="!sbModel.name || !rbModel.name">
+
             <table class="table">
               <thead>
                 <tr><th></th><th>Front</th><th>Back</th></tr>
@@ -115,7 +117,7 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+        <!-- <script src="scripts/controllers/main.js"></script> -->
         <!-- endbuild -->
 </body>
 </html>
