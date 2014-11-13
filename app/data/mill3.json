@@ -5,7 +5,7 @@
         "sizingBases" : [
           {
             "name" : "SA",
-            "settings" : { "S1F": "4.5", "S1B": "4.5", "S2F": "2.3", "S2B": "2.3" }
+            "settings" : { "S1F": "0.5", "S1B": "0.6", "S2F": "0.7", "S2B": "0.8" }
           },
           {
             "name" : "SB",

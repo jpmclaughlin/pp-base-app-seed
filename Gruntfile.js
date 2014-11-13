@@ -33,6 +33,10 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      json: {
+      files: ['<%= yeoman.app %>/data/{,*/}*.json'],
+        tasks: ['copy:dist']
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -372,6 +376,7 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '<%= yeoman.dist %>',
           dest: '//slt-app-01/programs/_JPM-testing/base-settings-app-test',
+          //dest: '//slt-app-01/inetpub/wwwroot/SteelNetWin/base-settings-app-test',
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
