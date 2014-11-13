@@ -34,8 +34,11 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       json: {
-      files: ['<%= yeoman.app %>/data/{,*/}*.json'],
-        tasks: ['copy:dist']
+        files: ['<%= yeoman.app %>/data/{,*/}*.json'],
+        tasks: ['copy:dist'],
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        }
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],

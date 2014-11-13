@@ -13,16 +13,10 @@ var basesApp = angular.module('basesApp', ['ui.bootstrap']);
 
 basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function($scope, $http, filterFilter) {
 
-  // $http.get('mill3.json').success(function(data) {
+  // $http.get('data/mill3.json').success(function(data) {
   //     $scope.sizes = data;
   // });
 
-  // init values
-  $scope.sizesModel = { };
-  $scope.gaugesModel = { };
-  $scope.selectedGauge = { };
-  $scope.sbModel = { };
-  $scope.rbModel = { };
 
   $scope.sizes = [
     { 'size': '3.5 OD',
@@ -726,6 +720,14 @@ basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function
       ]
     }
   ];
+
+
+  // init values
+  $scope.sizesModel = { };
+  $scope.gaugesModel = { };
+  $scope.selectedGauge = { };
+  $scope.sbModel = { };
+  $scope.rbModel = { };
 
   $scope.setSize = function(size) {
 
