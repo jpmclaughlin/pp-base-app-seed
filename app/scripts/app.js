@@ -11,7 +11,11 @@
 
 var basesApp = angular.module('basesApp', ['ui.bootstrap']);
 
-basesApp.controller('BaseListCtrl', ['$scope', 'filterFilter', function($scope, filterFilter) {
+basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function($scope, $http, filterFilter) {
+
+  // $http.get('mill3.json').success(function(data) {
+  //     $scope.sizes = data;
+  // });
 
   // init values
   $scope.sizesModel = { };
