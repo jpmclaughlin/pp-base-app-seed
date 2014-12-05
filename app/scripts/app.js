@@ -24,8 +24,6 @@ basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function
   $scope.sbModel = { };
   $scope.rbModel = { };
 
-
-
   $scope.setSize = function(size) {
 
     // first, reset the selections
@@ -41,8 +39,6 @@ basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function
       }
     }
   };
-
-  // $scope.setSize($scope.sizesModel.size);
 
   $scope.setGauge = function(gauge) {
 
