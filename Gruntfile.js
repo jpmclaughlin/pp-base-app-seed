@@ -33,6 +33,13 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+      json: {
+        files: ['<%= yeoman.app %>/data/{,*/}*.json'],
+        tasks: ['copy:dist'],
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        }
+      },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -348,7 +355,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.bat',
-            '*.json',
+            'data/{,*/}*.json',
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
@@ -366,36 +373,37 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>'
         }]
       },
-      push: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.dist %>',
-          dest: '//slt-app-01/programs/_JPM-testing/base-settings-app-test',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.bat',
-            '*.json',
-            '*.html',
-            'views/{,*/}*.html',
-            'scripts/{,*/}*.js',
-            'styles/{,*/}*.css',
-            'images/{,*/}*.{webp}',
-            'fonts/*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: 'bower_components/bootstrap/dist',
-          src: 'fonts/*',
-          dest: '<%= yeoman.dist %>'
-        }]
-      },
+      // push: {
+      //   files: [{
+      //     expand: true,
+      //     dot: true,
+      //     cwd: '<%= yeoman.dist %>',
+      //     dest: '//slt-app-01/programs/_JPM-testing/base-settings-app-test',
+      //     //dest: '//slt-app-01/inetpub/wwwroot/SteelNetWin/base-settings-app-test',
+      //     src: [
+      //       '*.{ico,png,txt}',
+      //       '.htaccess',
+      //       '*.bat',
+      //       'data/{,*/}*.json',
+      //       '*.html',
+      //       'views/{,*/}*.html',
+      //       'scripts/{,*/}*.js',
+      //       'styles/{,*/}*.css',
+      //       'images/{,*/}*.{webp}',
+      //       'fonts/*'
+      //     ]
+      //   }, {
+      //     expand: true,
+      //     cwd: '.tmp/images',
+      //     dest: '<%= yeoman.dist %>/images',
+      //     src: ['generated/*']
+      //   }, {
+      //     expand: true,
+      //     cwd: 'bower_components/bootstrap/dist',
+      //     src: 'fonts/*',
+      //     dest: '<%= yeoman.dist %>'
+      //   }]
+      // },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
@@ -475,9 +483,9 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('push', [
-    'build',
+    'build'//,
     // 'clean:push', // cleaning network location doesn't work just yet
-    'copy:push'
+    //'copy:push'
   ]);
 
   grunt.registerTask('default', [
