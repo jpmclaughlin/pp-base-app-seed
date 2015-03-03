@@ -11,15 +11,17 @@
 
 var basesApp = angular.module('basesApp', ['ui.bootstrap']);
 
-basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function($scope, $http, filterFilter) {
+basesApp.controller('BaseListCtrl', ['$scope', 'filterFilter', function($scope, filterFilter) {
 
-  // $http.get('data/mill3.json').success(function(data) {
-  //     $scope.sizes = data;
-  // });
-
+  // init values
+  $scope.sizesModel = { };
+  $scope.gaugesModel = { };
+  $scope.selectedGauge = { };
+  $scope.sbModel = { };
+  $scope.rbModel = { };
 
   $scope.sizes = [
-    { 'size': '3.5 OD',
+    { 'size': '3.5 OD', 'undersize': '0.4',
       'gauges': [
         { 'gauge': '0.120',
           'sizingBases' : [
@@ -175,7 +177,7 @@ basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function
         }
       ]
     },
-    { 'size': '4.0 OD',
+    { 'size': '4.0 OD', 'undersize': '0.2',
       'gauges': [
         { 'gauge': '0.109',
           'sizingBases' : [
@@ -483,7 +485,7 @@ basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function
         }
       ]
     },
-    { 'size': '4.0 x 5.0',
+    { 'size': '4.0 x 5.0', 'undersize': '0.6',
       'gauges': [
         { 'gauge': '0.625',
           'sizingBases' : [
@@ -563,7 +565,7 @@ basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function
         }
       ]
     },
-    { 'size': '5.0 OD',
+    { 'size': '5.0 OD', 'undersize': '0.0',
       'gauges': [
         { 'gauge': '0.120',
           'sizingBases' : [
@@ -721,14 +723,6 @@ basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function
     }
   ];
 
-
-  // init values
-  $scope.sizesModel = { };
-  $scope.gaugesModel = { };
-  $scope.selectedGauge = { };
-  $scope.sbModel = { };
-  $scope.rbModel = { };
-
   $scope.setSize = function(size) {
 
     // first, reset the selections
@@ -741,8 +735,10 @@ basesApp.controller('BaseListCtrl', ['$scope', '$http', 'filterFilter', function
     for (var i = 0; i < $scope.selectedSize.length; i++) {
       if ($scope.selectedSize[i].size === size) {
         $scope.gauges = angular.copy($scope.selectedSize[i].gauges);
+        $scope.undersize = angular.copy($scope.selectedSize[i].undersize);
       }
-    }
+    };
+    // $scope.bottomShiv = $scope.undersize / 2;
   };
 
   // $scope.setSize($scope.sizesModel.size);
