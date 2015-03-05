@@ -404,6 +404,22 @@ module.exports = function (grunt) {
       }
     },
 
+    ftpush: {
+      build: {
+        auth: {
+          host: 'piercingproductions.com',
+          port: 21,
+          authKey: 'pp'
+        },
+        src: 'dist',
+        dest: '/test/BaseSettingsApp',
+        exclusions: [],
+        // keep: ['/important/images/at/server/*.jpg'],
+        simple: false,
+        useList: false
+      }
+    },
+
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
